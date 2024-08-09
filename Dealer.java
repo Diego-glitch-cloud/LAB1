@@ -14,7 +14,7 @@ public class Dealer {
     public void pedir() {
         Random rand = new Random();
         int carta = rand.nextInt(9) + 1; // Genera un número aleatorio entre 1 y 9
-        if (this.mano == 0) {
+        if (this.mano == 0 && this.primeraCarta == 0) {
             this.primeraCarta = carta;
         } else {
             this.mano += carta;

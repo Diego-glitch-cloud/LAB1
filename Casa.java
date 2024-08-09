@@ -64,8 +64,10 @@ public class Casa {
         int manoDealer = dealer.getMano();
 
         if (manoJugador > 21) {
+            this.dealerVictorias++;
             return "El jugador perdio.";
         } else if (manoDealer > 21) {
+            this.jugadorVictorias++;
             return "El dealer perdio.";
         } else if (manoJugador > manoDealer) {
             this.jugadorVictorias++;
