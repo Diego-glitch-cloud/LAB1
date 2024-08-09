@@ -32,12 +32,16 @@ public class Main {
 
                 // Revisar si pierde el jugador 
                 if (jugador.getMano() > 21) {
-                    System.out.println("El jugador perdió. Mano del jugador: " + jugador.getMano());
+                    System.out.println("El jugador perdió.");
+                    System.out.println("Mano final del jugador: " + jugador.getMano());
+                    System.out.println("Mano final del dealer: " + dealer.getMano());
                     fin = true;
                 }
 
             } else if (opcion.equals("retirarse")) {
                 dealer.setMano(dealer.getPrimeraCarta() + dealer.getMano())
+                System.out.println("Mano final del jugador: " + jugador.getMano());
+                System.out.println("Mano final del dealer: " + dealer.getMano());
                 fin = true;
             } else {
                 System.out.println("opción no válida. Intente de nuevo.");
@@ -56,10 +60,19 @@ public class Main {
             
         }
 
-        
+        // Comparar resultados y mostrar el resultado
+        String resultado = casa.comparar(jugador, dealer);
+        System.out.println("Mano final del jugador: " + jugador.getMano());
+        System.out.println("Mano final del dealer: " + dealer.getMano());
+        System.out.println(resultado);
 
+        // Mostrar estadísticas
+        System.out.println("Victorias del jugador: " + casa.getJugadorVictorias());
+        System.out.println("Victorias del dealer: " + casa.getDealerVictorias());
+        System.out.println("Empates: " + casa.getEmpates());
+        System.out.println("Partidas jugadas: " + casa.getPartidas());
 
-
+        scanner.close();
     }
 
 }
