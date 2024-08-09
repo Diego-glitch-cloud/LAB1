@@ -34,6 +34,6 @@ public class Dealer {
     }
 
     public int getMano() {
-        return this.mano;
+        return this.mano + this.primeraCarta;
     }
 }

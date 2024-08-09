@@ -39,7 +39,6 @@ public class Main {
                 }
 
             } else if (opcion.equals("retirarse")) {
-                dealer.setMano(dealer.getPrimeraCarta() + dealer.getMano());
                 System.out.println("Mano final del jugador: " + jugador.getMano());
                 System.out.println("Mano final del dealer: " + dealer.getMano());
                 fin = true;
