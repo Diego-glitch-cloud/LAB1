@@ -34,7 +34,7 @@ public class Main {
 
                 // Revisar si pierde el jugador 
                 if (jugador.getMano() > 21) {
-                    resultado = comparar(jugador, dealer);
+                    resultado = casa.comparar(jugador, dealer);
                     System.out.println(resultado);
                     System.out.println("Mano final del jugador: " + jugador.getMano());
                     System.out.println("Mano final del dealer: " + dealer.getMano());
@@ -42,7 +42,7 @@ public class Main {
                 }
 
             } else if (opcion.equals("retirarse")) {
-                resultado = comparar(jugador, dealer);
+                resultado = casa.comparar(jugador, dealer);
                 System.out.println(resultado);
                 System.out.println("Mano final del jugador: " + jugador.getMano());
                 System.out.println("Mano final del dealer: " + dealer.getMano());
