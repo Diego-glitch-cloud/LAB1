@@ -23,7 +23,7 @@ public class Main {
             boolean fin = false;
         
             System.out.println("Mano del jugador: " + jugador.getMano());
-            System.out.println("Mano visible del dealer: " + dealer.getMano()); // No se muestra la primera carta
+            System.out.println("Mano visible del dealer: " + dealer.getMano() - dealer.getPrimeraCarta()); // No se muestra la primera carta
 
             System.out.println("¿Desea pedir una carta (pedir) o retirarse (retirarse)?");
             String opcion = scanner.nextLine();
@@ -68,12 +68,6 @@ public class Main {
             }
             
         }
-
-        // Comparar resultados y mostrar el resultado
-        resultado = casa.comparar(jugador, dealer);
-        System.out.println("Mano final del jugador: " + jugador.getMano());
-        System.out.println("Mano final del dealer: " + dealer.getMano());
-        System.out.println(resultado);
 
         // Mostrar estadísticas
         System.out.println("Victorias del jugador: " + casa.getJugadorVictorias());
