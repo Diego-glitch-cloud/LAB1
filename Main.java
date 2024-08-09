@@ -23,7 +23,7 @@ public class Main {
             boolean fin = false;
         
             System.out.println("Mano del jugador: " + jugador.getMano());
-            System.out.println("Mano visible del dealer: " + dealer.getMano() - dealer.getPrimeraCarta()); // No se muestra la primera carta
+            System.out.println("Mano visible del dealer: " + (dealer.getMano() - dealer.getPrimeraCarta())); // No se muestra la primera carta
 
             System.out.println("¿Desea pedir una carta (pedir) o retirarse (retirarse)?");
             String opcion = scanner.nextLine();
