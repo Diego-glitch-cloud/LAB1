@@ -17,10 +17,6 @@ public class Jugador {
         this.mano += carta;
     }
 
-    public void retirarse() {
-        // Agregar más adelante
-    }
-
     // Setters Y getters
 
     public void setNombre(String nombre) {
