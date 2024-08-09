@@ -69,10 +69,10 @@ public class Casa {
         } else if (manoDealer > 21) {
             this.jugadorVictorias++;
             return "El dealer perdio.";
-        } else if (manoJugador > manoDealer) {
+        } else if (manoJugador > manoDealer || manoJugador == 21) {
             this.jugadorVictorias++;
             return "El jugador gano.";
-        } else if (manoDealer > manoJugador) {
+        } else if (manoDealer > manoJugador || manoDealer == 21) {
             this.dealerVictorias++;
             return "El dealer gano.";
         } else {
