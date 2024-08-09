@@ -15,11 +15,13 @@ public class Main {
         Jugador jugador = new Jugador(nombre);
 
         boolean continuar = true;
+        String resultado;
+
+        // Se inicia el juego
+        casa.iniciar(jugador, dealer);
         while (continuar) {
             boolean fin = false;
-            // Se inicia el juego
-            casa.iniciar(jugador, dealer);
-
+        
             System.out.println("Mano del jugador: " + jugador.getMano());
             System.out.println("Mano visible del dealer: " + dealer.getMano()); // No se muestra la primera carta
 
@@ -29,19 +31,19 @@ public class Main {
             if (opcion.equals("pedir")) {
                 jugador.pedir();
                 dealer.pedir();
-                System.out.println("MANO del jugador: " + jugador.getMano());
-                System.out.println("MANO visible del dealer: " + dealer.getMano()); // No se muestra la primera carta
-
 
                 // Revisar si pierde el jugador 
                 if (jugador.getMano() > 21) {
-                    System.out.println("El jugador perdió.");
+                    resultado = comparar(jugador, dealer);
+                    System.out.println(resultado);
                     System.out.println("Mano final del jugador: " + jugador.getMano());
                     System.out.println("Mano final del dealer: " + dealer.getMano());
                     fin = true;
                 }
 
             } else if (opcion.equals("retirarse")) {
+                resultado = comparar(jugador, dealer);
+                System.out.println(resultado);
                 System.out.println("Mano final del jugador: " + jugador.getMano());
                 System.out.println("Mano final del dealer: " + dealer.getMano());
                 fin = true;
@@ -57,13 +59,18 @@ public class Main {
                 if (respuesta.equalsIgnoreCase("n")) {
                     continuar = false;
                     System.out.println("Saliendo...");
+                } else if (respuesta.equalsIgnoreCase("s")) {
+                    // Se inicia el juego
+                    casa.iniciar(jugador, dealer);
+                } else {
+                    System.out.println("opción no válida. Intente de nuevo.");
                 }
             }
             
         }
 
         // Comparar resultados y mostrar el resultado
-        String resultado = casa.comparar(jugador, dealer);
+        resultado = casa.comparar(jugador, dealer);
         System.out.println("Mano final del jugador: " + jugador.getMano());
         System.out.println("Mano final del dealer: " + dealer.getMano());
         System.out.println(resultado);
