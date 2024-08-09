@@ -11,11 +11,10 @@ public class Jugador {
     }
 
     // Métodos
-    public int pedir() {
+    public void pedir() {
         Random rand = new Random();
         int carta = rand.nextInt(9) + 1; // Genera un número aleatorio entre 1 y 9
         this.mano += carta;
-        return carta;
     }
 
     public void retirarse() {
@@ -23,7 +22,7 @@ public class Jugador {
     }
 
     // Setters Y getters
-    
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }

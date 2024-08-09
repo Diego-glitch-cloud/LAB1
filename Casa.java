@@ -14,6 +14,9 @@ public class Casa {
 
     // Métodos
     public void iniciar(Jugador jugador, Dealer dealer) {
+        jugador.setMano(0);
+        dealer.setMano(0);
+        
         // Reparte 2 cartas al jugador y 2 cartas al dealer
         for (int i = 0; i < 2; i++) {
             jugador.pedir();
