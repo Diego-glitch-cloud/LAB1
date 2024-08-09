@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[]  args) {
+    public static void main(String[] args) {
         // Crear Instancias
         Dealer dealer = new Dealer();
         Casa casa = new Casa();
 
-        // Solicito el nombre del jugador al usuario 
+        // Solicito el nombre del jugador al usuario
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese el nombre del jugador: ");
         String nombre = scanner.nextLine();
@@ -21,7 +21,7 @@ public class Main {
         casa.iniciar(jugador, dealer);
         while (continuar) {
             boolean fin = false;
-        
+
             System.out.println("Mano del jugador: " + jugador.getMano());
             int manoDealer = dealer.getMano() - dealer.getPrimeraCarta();
             System.out.println("Mano visible del dealer: " + manoDealer); // No se muestra la primera carta
@@ -33,7 +33,7 @@ public class Main {
                 jugador.pedir();
                 dealer.pedir();
 
-                // Revisar si pierde el jugador 
+                // Revisar si pierde el jugador
                 if (jugador.getMano() > 21) {
                     resultado = casa.comparar(jugador, dealer);
                     System.out.println(resultado);
@@ -52,7 +52,6 @@ public class Main {
                 System.out.println("opción no válida. Intente de nuevo.");
             }
 
-
             if (fin) {
                 System.out.println("¿Desea continuar jugando? (s) o (n)");
                 String respuesta = scanner.nextLine();
@@ -67,7 +66,7 @@ public class Main {
                     System.out.println("opción no válida. Intente de nuevo.");
                 }
             }
-            
+
         }
 
         // Mostrar estadísticas
@@ -79,4 +78,4 @@ public class Main {
         scanner.close();
     }
 
-}
+} // prueba keys
