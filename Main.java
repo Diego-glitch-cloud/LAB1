@@ -29,6 +29,9 @@ public class Main {
             if (opcion.equals("pedir")) {
                 jugador.pedir();
                 dealer.pedir();
+                System.out.println("MANO del jugador: " + jugador.getMano());
+                System.out.println("MANO visible del dealer: " + dealer.getMano()); // No se muestra la primera carta
+
 
                 // Revisar si pierde el jugador 
                 if (jugador.getMano() > 21) {
