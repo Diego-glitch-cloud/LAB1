@@ -62,6 +62,8 @@ public class Casa {
     public String comparar(Jugador jugador, Dealer dealer) {
         int manoJugador = jugador.getMano();
         int manoDealer = dealer.getMano();
+        
+        this.partidas++;
 
         if (manoJugador > 21) {
             this.dealerVictorias++;
